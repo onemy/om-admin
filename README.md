@@ -2,6 +2,9 @@
 
 OM-Admin后台管理系统
 
+## 技术框架
+1. 前端：jquery+bootstrap+adminlte3(vue 后续)
+2. 后端:springboot+spring security+jwt+jpa+mybatis
 
 ## 内置功能
 
