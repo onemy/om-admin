@@ -19,16 +19,16 @@ OM-Admin后台管理系统
 
 <table>
     <tr>
-        <td><img src="http://onemysoft.com/images/oma/homepage.png"/></td>
-        <td><img src="http://onemysoft.com/images/oma/user.png"/></td>
+        <td><img src="http://onemysoft.com/images/oma/homepage.jpg"/></td>
+        <td><img src="http://onemysoft.com/images/oma/user.jpg"/></td>
     </tr>
     <tr>
-        <td><img src="http://onemysoft.com/images/oma/auth.png"/></td>
-        <td><img src="http://onemysoft.com/images/oma/role.png"/></td>
+        <td><img src="http://onemysoft.com/images/oma/auth.jpg"/></td>
+        <td><img src="http://onemysoft.com/images/oma/role.jpg"/></td>
     </tr>
     <tr>
-        <td><img src="http://onemysoft.com/images/oma/menu.png"/></td>
-        <td><img src="http://onemysoft.com/images/oma/group.png"/></td>
+        <td><img src="http://onemysoft.com/images/oma/menu.jpg"/></td>
+        <td><img src="http://onemysoft.com/images/oma/group.jpg"/></td>
     </tr>    
 </table>
 
