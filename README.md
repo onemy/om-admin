@@ -19,16 +19,16 @@ OM-Admin后台管理系统
 
 <table>
     <tr>
-        <td><img src="https://gitee.com/onemy/om-admin/blob/master/doc/pic/homepage.png"/></td>
-        <td><img src="https://gitee.com/onemy/om-admin/blob/master/doc/pic/user.png"/></td>
+        <td><img src="http://onemysoft.com/images/oma/homepage.png"/></td>
+        <td><img src="http://onemysoft.com/images/oma/user.png"/></td>
     </tr>
     <tr>
-        <td><img src="https://gitee.com/onemy/om-admin/blob/master/doc/pic/auth.png"/></td>
-        <td><img src="https://gitee.com/onemy/om-admin/blob/master/doc/pic/role.png"/></td>
+        <td><img src="http://onemysoft.com/images/oma/auth.png"/></td>
+        <td><img src="http://onemysoft.com/images/oma/role.png"/></td>
     </tr>
     <tr>
-        <td><img src="https://gitee.com/onemy/om-admin/blob/master/doc/pic/menu.png"/></td>
-        <td><img src="https://gitee.com/onemy/om-admin/blob/master/doc/pic/group.png"/></td>
+        <td><img src="http://onemysoft.com/images/oma/menu.png"/></td>
+        <td><img src="http://onemysoft.com/images/oma/group.png"/></td>
     </tr>    
 </table>
 
