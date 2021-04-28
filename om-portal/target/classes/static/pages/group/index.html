@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>onemysoft</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.css">
+  <!-- Google Font: Source Sans Pro
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- OMA style -->
+  <link rel="stylesheet" href="../../dist/css/oma.css">  
+</head>
+<body class="hold-transition sidebar-collapse layout-top-nav">
+<div class="wrapper">
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+	  <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">
+            <!-- <h4 class="m-0">用户列表</h4> -->
+          </div>
+          <div class="col-sm-6">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        
+        <div class="row">
+          <div class="col-12">
+            <!-- Default box -->
+            <div class="card">
+              <div class="card-body">
+				<div class="row">
+          			<div class="col-sm-6">
+		              	<a class="btn btn-info btn-sm" href="#" onclick="openEntityWin(false,'',this)"><i class="fas fa-plus-circle"></i> 新增</a>
+		              	
+		             </div>
+		             <div class="col-sm-6">
+		              	<div class="btn-group float-sm-right">
+			              	<button type="button" onclick="$('#queryArea').toggle()" class="btn btn-default btn-sm">
+			              	 <i class="fas fa-search"></i></button>
+			              	<button type="button" class="btn btn-default btn-sm" onclick="location.reload();"><i class="fas fa-sync-alt"></i></button>
+		              	</div>
+              		</div>
+              	</div>
+              	             	
+                <table id="dataGrid" data-view="dataTables" data-remote="true" data-load="auto"  data-paginate="false" data-url="/api/group/tree" data-search="#searchForm" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                  	<th data-column="children" width="3%" data-className="treegrid-control" data-ref="renderer" data-renderer="treeRender"></th>
+                    <th data-column="name" data-width="25%">名称</th>
+                    <th data-column="code" data-width="25%">编码</th>
+                    <th data-column="orderNo" data-width="5%">序号</th>
+                    <th data-column="status" data-width="5%" data-ref="renderer" data-renderer="statusRenderer">禁用</th>
+                    <th data-column="id" data-width="20%" data-ref="renderer" data-renderer="operateRenderer">操作</th>
+                  </tr>
+                  </thead>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+
+  </div>
+  <!-- /.content-wrapper -->
+
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="../../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.js"></script>
+<!-- js-cookie -->
+<script src="../../plugins/js-cookie/js.cookie.min.js"></script>
+<!-- OM libs -->
+<script src="../../dist/js/om.config.js"></script>
+<script src="../../dist/js/om.core.js"></script>
+<!-- <script src="../../dist/js/om.auth.js"></script> -->
+<!-- jquery-validation -->
+<script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-treegrid/dataTables.treeGrid.js"></script>
+<script src="../../dist/js/om.treeGrid.js"></script>
+<!-- layer -->
+<script src="../../plugins/layer/layer/layer.js"></script>
+<!-- page script -->
+<script src="../../dist/js/om.grid.js"></script>
+<script src="index.js"></script>
+
+
+</body>
+</html>

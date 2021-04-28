@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>onemysoft</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.css">
+  <!-- Google Font: Source Sans Pro
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- OMA style -->
+  <link rel="stylesheet" href="../../dist/css/oma.css">  
+</head>
+<body class="hold-transition sidebar-collapse layout-top-nav">
+<div class="wrapper">
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+	  <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">
+            <!-- <h4 class="m-0">用户列表</h4> -->
+          </div>
+          <div class="col-sm-6">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+
+            <!-- Profile Image -->
+            <div class="card card-primary card-outline">
+              <div class="card-body box-profile">
+                <div class="text-center">
+                  <img class="profile-user-img img-fluid img-circle"
+                       src="../../dist/img/user4-128x128.jpg"
+                       alt="User profile picture">
+                </div>
+
+                <h3 id="p_nickname" class="profile-username text-center"></h3>
+				<p id="p_username" class="text-muted text-center"></p>
+
+
+
+				<strong><i class="fas fa-mobile-alt mr-1"></i> 手机号</strong>
+
+                <p id="p_mobile" class="text-muted"></p>
+
+                <hr>
+
+                <strong><i class="fas fa-at mr-1"></i> 邮箱</strong>
+
+                <p id="p_email" class="text-muted"></p>
+
+                <hr>
+
+                <strong><i class="fas fa-users mr-1"></i> 所属组</strong>
+
+                <p id="p_group" class="text-muted"></p>
+
+                <hr>
+
+                <strong><i class="far fa-file-alt mr-1"></i> 创建日期</strong>
+
+                <p id="p_createDate" class="text-muted"></p>
+
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+
+          </div>
+          <!-- /.col -->
+          <div class="col-md-9">
+            <div class="card">
+              <div class="card-header p-2">
+                <ul class="nav nav-pills">
+                  <li class="nav-item"><a class="nav-link active" href="#timeline" data-toggle="tab">基本信息</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">修改密码</a></li>
+                </ul>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content">
+                  
+                  <!-- /.tab-pane -->
+                  <div class="active tab-pane" id="timeline">
+					<form id="entityForm" class="form-horizontal">
+						<input id="entityId" name="id" type="hidden" class="form-control"/>
+                      <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label required">用户昵称：</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="nickname" name="nickname" placeholder="用户昵称">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-2 col-form-label">邮箱：</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" id="email" name="email" placeholder="邮箱">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName2" class="col-sm-2 col-form-label">手机：</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="mobile" name="mobile" placeholder="手机">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputExperience" class="col-sm-2 col-form-label">性别：</label>
+                        <div class="col-sm-10">
+	                        <select id="sex" name="sex" class="form-control form-control">
+	                          <option value="1">男</option>
+	                          <option value="2">女</option>
+	                          <option value="0">未知</option>
+	                        </select>                          
+                        </div>
+                      </div>                      
+                      <div class="form-group row">
+                        <label for="inputExperience" class="col-sm-2 col-form-label">描述：</label>
+                        <div class="col-sm-10">
+                          <textarea id="description" name="description" class="form-control form-control-sm" rows="5" placeholder="输入 ..."></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="offset-sm-2 col-sm-10">
+                          <button type="button" class="btn btn-info" onclick="submitEntityForm()">保存</button>
+                        </div>
+                      </div>
+                    </form>                    
+                  </div>
+                  <!-- /.tab-pane -->
+
+                  <div class="tab-pane" id="settings">
+                    <form id="pwdForm" class="form-horizontal">
+                      <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">旧密码：</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="oldPassword" name="oldPassword" placeholder="旧密码">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-2 col-form-label">新密码：</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="newPassword" name="newPassword" placeholder="新密码">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName2" class="col-sm-2 col-form-label">确认密码：</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="newPassword2" name="newPassword2" placeholder="确认密码">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="offset-sm-2 col-sm-10">
+                          <button type="button" class="btn btn-info" onclick="submitPwdForm()">保存</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+  </div>
+  <!-- /.content-wrapper -->
+
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- jquery-validation -->
+<script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+<!-- Bootstrap -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="../../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.js"></script>
+<!-- js-cookie -->
+<script src="../../plugins/js-cookie/js.cookie.min.js"></script>
+<!-- OM libs -->
+<script src="../../dist/js/om.config.js"></script>
+<script src="../../dist/js/om.core.js"></script>
+<script src="../../dist/js/om.form.js"></script>
+
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../../dist/js/om.dataTables.js"></script>
+<!-- layer -->
+<script src="../../plugins/layer/layer/layer.js"></script>
+<script src="profile.js"></script>
+
+
+</body>
+</html>

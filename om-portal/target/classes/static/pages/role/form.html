@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>onemysoft</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.css">
+  <!-- Google Font: Source Sans Pro
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- OMA style -->
+  <link rel="stylesheet" href="../../dist/css/oma.css">    
+</head>
+<body class="hold-transition sidebar-collapse layout-top-nav">
+<div class="wrapper">
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+	  <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">
+            <!-- <h4 class="m-0">用户列表</h4> -->
+          </div>
+          <div class="col-sm-6">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+		<div class="row">
+          <div class="col-12">
+            <!-- Default box -->
+            <div class="card">
+	          <!-- /.card-header -->
+              <div class="card-body">
+              	<!-- form -->
+				<form id="entityForm">
+					<input id="entityId" name="id" type="hidden" class="form-control"/>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      	<!-- text input -->
+						<div class="form-group row">
+		                    <div class="col-sm-3"><label for="roleCode" class="col-form-label float-sm-right required">角色编码：</label></div>
+		                    <div class="col-sm-9 validate">
+		                      <input type="text" class="form-control form-control-sm" id="roleCode" name="roleCode" placeholder="角色编码">
+		                    </div>
+	                  	</div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group row">
+                        <div class="col-sm-3"><label class="col-form-label float-sm-right required">角色名称：</label></div>
+                        <div class="col-sm-9 validate"><input type="text" id="roleName" name="roleName"  placeholder="角色名称" class="form-control form-control-sm"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+						<div class="form-group row">
+		                    <div class="col-sm-3"><label for="username" class="col-form-label float-sm-right">禁用状态：</label></div>
+		                    <div class="col-sm-9">
+		                        <select id="status" name="status" class="form-control form-control-sm">
+		                          <option value="0">启用</option>
+		                          <option value="1">禁用</option>
+		                        </select>
+		                    </div>
+	                  	</div>
+                    </div>
+                  </div>
+                  <div class="row">                    
+                    <div class="col-sm-12">
+						<div class="form-group row">
+		                    <div class="col-sm-3"><label for="orderNo" class="col-form-label float-sm-right required">排序：</label></div>
+		                    <div class="col-sm-9 validate">
+		                      <input type="text" class="form-control form-control-sm" id="orderNo" name="orderNo" placeholder="排序">
+		                      
+		                    </div>
+	                  	</div>
+                    </div>
+                  </div>
+                  <div class="row">                    
+                    <div class="col-sm-12">
+						<div class="form-group row">
+		                    <div class="col-sm-3"><label class="col-form-label float-sm-right">描述：</label></div>
+		                    <div class="col-sm-9 validate">
+		                      <textarea id="description" name="description" class="form-control form-control-sm" rows="3" placeholder="Enter ..."></textarea>
+		                    </div>
+	                  	</div>
+                    </div>
+                  </div>                  
+ 
+
+                </form>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    <!-- /.content -->
+
+   
+  </div>
+  <!-- /.content-wrapper -->
+
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- jquery-validation -->
+<script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+<!-- Bootstrap -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="../../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- Bootstrap Switch -->
+<script src="../../plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.js"></script>
+<!-- js-cookie -->
+<script src="../../plugins/js-cookie/js.cookie.min.js"></script>
+<!-- OM libs -->
+<script src="../../dist/js/om.config.js"></script>
+<script src="../../dist/js/om.core.js"></script>
+<script src="../../dist/js/om.form.js"></script>
+<script src="../../dist/js/om.auth.js"></script>
+<script src="../../dist/js/om.component.js"></script>
+
+
+<!-- layer -->
+<script src="../../plugins/layer/layer/layer.js"></script>
+<!-- page script -->
+<script src="form.js"></script>
+
+
+</body>
+</html>

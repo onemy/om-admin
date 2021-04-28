@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>onemysoft</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.css">
+  <!-- Google Font: Source Sans Pro
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- OMA style -->
+  <link rel="stylesheet" href="../../dist/css/oma.css">
+  <!-- zTree -->
+  <link rel="stylesheet" href="../../plugins/zTree_v3/css/metroStyle/metroStyle.css" type="text/css">
+</head>
+<body class="hold-transition sidebar-collapse layout-top-nav">
+<div class="wrapper">
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+	  <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">
+            <!-- <h4 class="m-0">用户列表</h4> -->
+          </div>
+          <div class="col-sm-6">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+		<div class="row">
+          <div class="col-12">
+            <!-- Default box -->
+            <div id="queryArea" class="card">
+              <!-- /.card-header -->
+<!-- 			  <div class="card-header"> -->
+<!--               	<h3 class="card-title">组选择</h3> -->
+<!--               </div> -->
+              <div class="card-body">
+				<div class="row">
+		          <div class="col-sm-12">
+					<ul id="ztree" class="ztree" style="width:260px; overflow:auto;"></ul>
+	              </div>
+	             </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    <!-- /.content -->
+
+  </div>
+  <!-- /.content-wrapper -->
+
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="../../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.js"></script>
+<!-- js-cookie -->
+<script src="../../plugins/js-cookie/js.cookie.min.js"></script>
+<!-- OM libs -->
+<script src="../../dist/js/om.config.js"></script>
+<script src="../../dist/js/om.core.js"></script>
+<script src="../../dist/js/om.auth.js"></script>
+<!-- jquery-validation -->
+<script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../../dist/js/om.dataTables.js"></script>
+<!-- layer -->
+<script src="../../plugins/layer/layer/layer.js"></script>
+<!-- zTree v3 -->
+<script src="../../plugins/Ztree_v3/js/jquery.ztree.core.min.js"></script>
+<script src="../../plugins/Ztree_v3/js/jquery.ztree.all.min.js"></script>
+<!-- page script -->
+<script src="../../dist/js/om.grid.js"></script>
+
+
+<script>
+	/**
+	 *  js
+	 */
+	$(document).ready(function () {
+		//zTree config
+		var setting = {
+				check : {
+					enable : false,
+					chkStyle : 'checkbox'
+				},
+				data : {
+					simpleData : {
+						enable : true,
+						idKey : 'id',
+						pIdKey : 'pid',
+						rootPId : 0
+					},
+					keep : {
+						leaf : false,
+						parent : false
+					}
+				},
+				callback : {
+					onClick : nodeClick
+				}
+			};
+		
+		//请求组列表
+	    $.ajax({
+	        url : host+'/api/group/list',
+	        type : 'post',
+	        contentType: "application/json",
+	        success : function(result, status, xhr) {
+	          if(result.success){
+	        	  var zNodes=result.data;
+	        	  
+	        	  var treeObj=$.fn.zTree.init($("#ztree"), setting, zNodes);
+	        	  
+	        	  var ids=CommonUtils.getUrlParam("ids");
+	        	  var node = treeObj.getNodeByParam("id", ids);
+	        	  treeObj.selectNode(node);
+	        	  
+	          }else{
+	        	  CommonUtils.notify("error",result.msg,"4000");
+	          }
+	        }
+	    });
+	
+	});
+	
+	
+	
+	
+	function filter(treeId, parentNode, childNodes) {
+		if (!childNodes)
+			return null;
+		for ( var i = 0, l = childNodes.length; i < l; i++) {
+			childNodes[i].name = childNodes[i].name.replace(/\.n/g, '.');
+		}
+		return childNodes;
+	}
+	
+	function nodeClick(event, treeId, treeNode, clickFlag) {
+	//	queryGrid(treeNode.id);
+	}
+	
+	function zTreeOnAsyncSuccess(event, treeId, treeNode, msg) {
+		var tree = $.fn.zTree.getZTreeObj(treeId);
+		tree.expandAll(true);
+		layer.closeAll('loading');
+	}
+	
+	
+	////////////////////////////////////
+	
+	function choose() {
+		var zTree = $.fn.zTree.getZTreeObj("ztree");
+		var nodes = zTree.getSelectedNodes();
+		return nodes[0];
+	}
+	
+</script>
+</body>
+</html>

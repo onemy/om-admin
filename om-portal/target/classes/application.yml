@@ -1,0 +1,83 @@
+# 项目相关配置
+oma:
+  # 名称
+  name: OMAdmin
+  # 版本
+  version: 0.0.1
+  # 版权年份
+  copyrightYear: 2021
+
+
+# 开发环境配置
+server:
+  # 服务器的HTTP端口，默认为8080
+  port: 8080
+  servlet:
+    # 应用的访问路径
+    context-path: /
+  tomcat:
+    # tomcat的URI编码
+    uri-encoding: UTF-8
+    # tomcat最大线程数，默认为200
+    max-threads: 800
+    # Tomcat启动初始化的线程数，默认值25
+    min-spare-threads: 30
+ 
+# 日志配置
+logging:
+  level:
+    com.onemysoft.oma: debug
+    org.springframework: warn
+
+
+# Spring配置
+spring:
+  profiles: 
+    active: datasource
+    #include: mybatis,jpa
+  # 模板引擎
+  thymeleaf:
+    mode: HTML
+    encoding: utf-8
+    # 禁用缓存
+    cache: false
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss   
+  # 文件上传
+  servlet:
+     multipart:
+       # 单个文件大小
+       max-file-size:  10MB
+       # 设置总上传的文件大小
+       max-request-size:  20MB
+  # 服务模块
+  devtools:
+    restart:
+      # 热部署开关
+      enabled: true
+
+
+
+# Swagger配置
+swagger:
+  # 是否开启swagger
+  enabled: true
+  
+  
+jwt:
+  # JWT存储的请求头
+  tokenHeader: Authorization 
+  # JWT加解密使用的密钥  
+  secret: onemysoft 
+  # JWT的超期限时间(60*60*24*7)  
+  expiration: 604800 
+  # JWT负载中拿到开头    
+  tokenHead: 'Bearer ' 
+
+# PageHelper分页插件
+pagehelper: 
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql   
