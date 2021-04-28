@@ -25,6 +25,7 @@ import com.onemysoft.oma.portal.entity.Menu;
 import com.onemysoft.oma.portal.entity.Permission;
 import com.onemysoft.oma.portal.entity.Role;
 import com.onemysoft.oma.portal.entity.User;
+import com.onemysoft.oma.portal.model.GroupTree;
 import com.onemysoft.oma.portal.model.MenuForm;
 import com.onemysoft.oma.portal.model.MenuMeta;
 import com.onemysoft.oma.portal.model.MenuTree;
@@ -112,14 +113,14 @@ public class MenuController {
 			mtList.add(mt);
 		}
 
-		MenuTree root = null;
+		List<MenuTree> root = new ArrayList<MenuTree>();
 		Set entrySet = menuList.entrySet();
 		
 		for (Iterator it = entrySet.iterator(); it.hasNext();) {
 			@SuppressWarnings("unchecked")
 			MenuTree menuVo = (MenuTree) ((Map.Entry<String, Object>) it.next()).getValue();
 			if (menuVo.getParent() == null || menuVo.getParent().getId().equals(""))
-				root = menuVo;
+				root.add(menuVo);
 			else {
 				MenuTree v = (MenuTree) menuList.get(menuVo.getParent().getId());
 				v.getChildren().add(menuVo);
@@ -127,7 +128,7 @@ public class MenuController {
 		}
 
 
-		return root.getChildren();
+		return root;
     }
     
     /**
