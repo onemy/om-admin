@@ -20,15 +20,15 @@ OM-Admin后台管理系统
 <table>
     <tr>
         <td><img src="https://gitee.com/onemy/om-admin/raw/master/doc/pic/homepage.png"/></td>
-        <td><img src="https://gitee.com/onemy/om-admin/raw/master/doc/pic/user.jpg"/></td>
+        <td><img src="https://gitee.com/onemy/om-admin/raw/master/doc/pic/user.png"/></td>
     </tr>
     <tr>
-        <td><img src="https://gitee.com/onemy/om-admin/raw/master/doc/pic/auth.jpg"/></td>
-        <td><img src="https://gitee.com/onemy/om-admin/raw/master/doc/pic/role.jpg"/></td>
+        <td><img src="https://gitee.com/onemy/om-admin/raw/master/doc/pic/auth.png"/></td>
+        <td><img src="https://gitee.com/onemy/om-admin/raw/master/doc/pic/role.png"/></td>
     </tr>
     <tr>
-        <td><img src="https://gitee.com/onemy/om-admin/raw/master/doc/pic/menu.jpg"/></td>
-        <td><img src="https://gitee.com/onemy/om-admin/raw/master/doc/pic/group.jpg"/></td>
+        <td><img src="https://gitee.com/onemy/om-admin/raw/master/doc/pic/menu.png"/></td>
+        <td><img src="https://gitee.com/onemy/om-admin/raw/master/doc/pic/group.png"/></td>
     </tr>    
 </table>
 
