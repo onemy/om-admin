@@ -1,27 +1,24 @@
--- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
---
--- Host: 127.0.0.1    Database: oma
--- ------------------------------------------------------
--- Server version	5.7.32-log
+/*
+Navicat MySQL Data Transfer
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+Source Server         : local
+Source Server Version : 50732
+Source Host           : localhost:3306
+Source Database       : oma
 
---
--- Table structure for table `sys_acl`
---
+Target Server Type    : MYSQL
+Target Server Version : 50732
+File Encoding         : 65001
 
+Date: 2021-04-29 13:44:20
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for sys_acl
+-- ----------------------------
 DROP TABLE IF EXISTS `sys_acl`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sys_acl` (
   `id` varchar(32) NOT NULL,
   `create_date` datetime(6) DEFAULT NULL,
@@ -37,25 +34,21 @@ CREATE TABLE `sys_acl` (
   `resource_id` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `sys_acl`
---
+-- ----------------------------
+-- Records of sys_acl
+-- ----------------------------
+INSERT INTO `sys_acl` VALUES ('402881847917cea401791c1db9e50019', '2021-04-29 13:33:00.773000', 'admin', null, null, '0', '2021-04-29 13:33:00.773000', null, 'U', '402881847917cea4017917d3ee000000', 'M', '1');
+INSERT INTO `sys_acl` VALUES ('402881847917cea401791c1db9f8001a', '2021-04-29 13:33:00.791000', 'admin', null, null, '0', '2021-04-29 13:33:00.791000', null, 'U', '402881847917cea4017917d3ee000000', 'M', '2');
+INSERT INTO `sys_acl` VALUES ('402881847917cea401791c1dba07001b', '2021-04-29 13:33:00.807000', 'admin', null, null, '0', '2021-04-29 13:33:00.807000', null, 'U', '402881847917cea4017917d3ee000000', 'P', '1');
+INSERT INTO `sys_acl` VALUES ('402881847917cea401791c1dba18001c', '2021-04-29 13:33:00.824000', 'admin', null, null, '0', '2021-04-29 13:33:00.824000', null, 'U', '402881847917cea4017917d3ee000000', 'P', '2');
+INSERT INTO `sys_acl` VALUES ('402881847917cea401791c1e665c001d', '2021-04-29 13:33:44.924000', 'admin', null, null, '0', '2021-04-29 13:33:44.924000', null, 'R', '402881847917cea40179182e20150008', 'M', '1');
+INSERT INTO `sys_acl` VALUES ('402881847917cea401791c1e666d001e', '2021-04-29 13:33:44.941000', 'admin', null, null, '0', '2021-04-29 13:33:44.941000', null, 'R', '402881847917cea40179182e20150008', 'M', '5');
 
-LOCK TABLES `sys_acl` WRITE;
-/*!40000 ALTER TABLE `sys_acl` DISABLE KEYS */;
-INSERT INTO `sys_acl` VALUES ('402881847917cea4017917d4388a0001','2021-04-28 17:34:14.659000','admin',NULL,NULL,0,'2021-04-28 17:34:14.659000',NULL,'U','402881847917cea4017917d3ee000000','M','1'),('402881847917cea4017917d438950002','2021-04-28 17:34:14.676000','admin',NULL,NULL,0,'2021-04-28 17:34:14.676000',NULL,'U','402881847917cea4017917d3ee000000','M','2'),('402881847917cea4017917d4389d0003','2021-04-28 17:34:14.684000','admin',NULL,NULL,0,'2021-04-28 17:34:14.684000',NULL,'U','402881847917cea4017917d3ee000000','M','3'),('402881847917cea4017917d438a50004','2021-04-28 17:34:14.693000','admin',NULL,NULL,0,'2021-04-28 17:34:14.693000',NULL,'U','402881847917cea4017917d3ee000000','M','5'),('402881847917cea4017917d438ad0005','2021-04-28 17:34:14.701000','admin',NULL,NULL,0,'2021-04-28 17:34:14.701000',NULL,'U','402881847917cea4017917d3ee000000','P','1'),('402881847917cea4017917d438b30006','2021-04-28 17:34:14.707000','admin',NULL,NULL,0,'2021-04-28 17:34:14.707000',NULL,'U','402881847917cea4017917d3ee000000','P','2'),('402881847917cea4017917d438ba0007','2021-04-28 17:34:14.714000','admin',NULL,NULL,0,'2021-04-28 17:34:14.714000',NULL,'U','402881847917cea4017917d3ee000000','P','3');
-/*!40000 ALTER TABLE `sys_acl` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `sys_group`
---
-
+-- ----------------------------
+-- Table structure for sys_group
+-- ----------------------------
 DROP TABLE IF EXISTS `sys_group`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sys_group` (
   `id` varchar(32) NOT NULL,
   `create_date` datetime(6) DEFAULT NULL,
@@ -73,25 +66,22 @@ CREATE TABLE `sys_group` (
   KEY `FK4miqlksu13h7y9nos119amknu` (`parent_id`),
   CONSTRAINT `FK4miqlksu13h7y9nos119amknu` FOREIGN KEY (`parent_id`) REFERENCES `sys_group` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `sys_group`
---
+-- ----------------------------
+-- Records of sys_group
+-- ----------------------------
+INSERT INTO `sys_group` VALUES ('1', null, null, null, null, '1', null, null, 'root', '集团总部', '0', null);
+INSERT INTO `sys_group` VALUES ('2', null, null, null, null, '2', null, null, 'all', '总务部', '0', '1');
+INSERT INTO `sys_group` VALUES ('3', null, null, null, null, '3', null, null, 'hr', '人力部', '0', '1');
+INSERT INTO `sys_group` VALUES ('4', null, null, null, null, '4', null, null, 'fico', '财务部', '0', '1');
+INSERT INTO `sys_group` VALUES ('5', '2021-04-26 14:52:11.816000', 'admin', null, 'test', '5', '2021-04-26 14:52:11.816000', null, 'tech', '技术部', '1', '1');
+INSERT INTO `sys_group` VALUES ('6', null, null, null, null, '6', null, null, 'sh', '上海分公司', '0', null);
+INSERT INTO `sys_group` VALUES ('7', null, null, null, null, '7', null, null, 'market', '市场部', '0', '6');
 
-LOCK TABLES `sys_group` WRITE;
-/*!40000 ALTER TABLE `sys_group` DISABLE KEYS */;
-INSERT INTO `sys_group` VALUES ('1',NULL,NULL,NULL,NULL,1,NULL,NULL,'root','集团总部','0',NULL),('2',NULL,NULL,NULL,NULL,2,NULL,NULL,'all','总务部','0','1'),('3',NULL,NULL,NULL,NULL,3,NULL,NULL,'hr','人力部','0','1'),('4',NULL,NULL,NULL,NULL,4,NULL,NULL,'fico','财务部','0','1'),('5','2021-04-26 14:52:11.816000','admin',NULL,'test',5,'2021-04-26 14:52:11.816000',NULL,'tech','技术部','1','1'),('6',NULL,NULL,NULL,NULL,6,NULL,NULL,'sh','上海分公司','0',NULL),('7',NULL,NULL,NULL,NULL,7,NULL,NULL,'market','市场部','0','6');
-/*!40000 ALTER TABLE `sys_group` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `sys_menu`
---
-
+-- ----------------------------
+-- Table structure for sys_menu
+-- ----------------------------
 DROP TABLE IF EXISTS `sys_menu`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sys_menu` (
   `id` varchar(32) NOT NULL,
   `create_date` datetime(6) DEFAULT NULL,
@@ -119,25 +109,20 @@ CREATE TABLE `sys_menu` (
   CONSTRAINT `FK2jrf4gb0gjqi8882gxytpxnhe` FOREIGN KEY (`parent_id`) REFERENCES `sys_menu` (`id`),
   CONSTRAINT `FK4xbdv7cd5uupcix43h4n85y5g` FOREIGN KEY (`module_id`) REFERENCES `sys_module` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `sys_menu`
---
+-- ----------------------------
+-- Records of sys_menu
+-- ----------------------------
+INSERT INTO `sys_menu` VALUES ('1', null, null, null, null, '1', null, null, 'sys', '系统管理', '#', '1', 'far fa-circle', '', '1', '0', '1', '1', null);
+INSERT INTO `sys_menu` VALUES ('2', null, null, null, null, '2', null, null, 'user', '用户管理', 'pages/user/index.html', '1', 'fas fa-user', '', '1', '0', '1', '1', '1');
+INSERT INTO `sys_menu` VALUES ('3', null, null, null, null, '3', null, null, 'role', '角色管理', 'pages/role/index.html', '1', 'fas fa-user-tag', '', '1', '0', '1', '1', '1');
+INSERT INTO `sys_menu` VALUES ('4', null, null, null, null, '4', null, null, 'menu', '菜单管理', 'pages/menu/index.html', '1', 'fas fa-tasks', '', '1', '0', '1', '1', '1');
+INSERT INTO `sys_menu` VALUES ('5', null, null, null, null, '5', null, null, 'group', '组织管理', 'pages/group/index.html', '1', 'fas fa-users', '', '1', '0', '1', '1', '1');
 
-LOCK TABLES `sys_menu` WRITE;
-/*!40000 ALTER TABLE `sys_menu` DISABLE KEYS */;
-INSERT INTO `sys_menu` VALUES ('1',NULL,NULL,NULL,NULL,1,NULL,NULL,'sys','系统管理','#','1','far fa-circle','','1','0','1',NULL,NULL),('2',NULL,NULL,NULL,NULL,2,NULL,NULL,'user','用户管理','pages/user/index.html','1','fas fa-user','','1','0','1',NULL,'1'),('3',NULL,NULL,NULL,NULL,3,NULL,NULL,'role','角色管理','pages/role/index.html','1','fas fa-user-tag','','1','0','1',NULL,'1'),('4',NULL,NULL,NULL,NULL,4,NULL,NULL,'menu','菜单管理','pages/menu/index.html','1','fas fa-tasks','','1','0','1',NULL,'1'),('5',NULL,NULL,NULL,NULL,5,NULL,NULL,'group','组织管理','pages/group/index.html','1','fas fa-users','','1','0','1',NULL,'1');
-/*!40000 ALTER TABLE `sys_menu` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `sys_module`
---
-
+-- ----------------------------
+-- Table structure for sys_module
+-- ----------------------------
 DROP TABLE IF EXISTS `sys_module`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sys_module` (
   `id` varchar(32) NOT NULL,
   `create_date` datetime(6) DEFAULT NULL,
@@ -151,24 +136,16 @@ CREATE TABLE `sys_module` (
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `sys_module`
---
+-- ----------------------------
+-- Records of sys_module
+-- ----------------------------
+INSERT INTO `sys_module` VALUES ('1', null, null, null, null, '1', null, null, 'sys', 'sys');
 
-LOCK TABLES `sys_module` WRITE;
-/*!40000 ALTER TABLE `sys_module` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sys_module` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `sys_permission`
---
-
+-- ----------------------------
+-- Table structure for sys_permission
+-- ----------------------------
 DROP TABLE IF EXISTS `sys_permission`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sys_permission` (
   `id` varchar(32) NOT NULL,
   `create_date` datetime(6) DEFAULT NULL,
@@ -187,25 +164,18 @@ CREATE TABLE `sys_permission` (
   KEY `FKdh0pa1l2c4t5xnewwsev2yyx2` (`menu_id`),
   CONSTRAINT `FKdh0pa1l2c4t5xnewwsev2yyx2` FOREIGN KEY (`menu_id`) REFERENCES `sys_menu` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `sys_permission`
---
+-- ----------------------------
+-- Records of sys_permission
+-- ----------------------------
+INSERT INTO `sys_permission` VALUES ('1', null, null, null, null, '1', null, null, 'userList', '用户查询', 'user/list', '2');
+INSERT INTO `sys_permission` VALUES ('2', null, null, null, null, '2', null, null, 'userSave', '用户修改', 'user/save', '2');
+INSERT INTO `sys_permission` VALUES ('3', null, null, null, null, '3', null, null, 'userDelete', '用户删除', 'user/delete', '2');
 
-LOCK TABLES `sys_permission` WRITE;
-/*!40000 ALTER TABLE `sys_permission` DISABLE KEYS */;
-INSERT INTO `sys_permission` VALUES ('1',NULL,NULL,NULL,NULL,1,NULL,NULL,'userList','用户查询','user/list','2'),('2',NULL,NULL,NULL,NULL,2,NULL,NULL,'userSave','用户修改','user/save','2'),('3',NULL,NULL,NULL,NULL,3,NULL,NULL,'userDelete','用户删除','user/delete','2');
-/*!40000 ALTER TABLE `sys_permission` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `sys_role`
---
-
+-- ----------------------------
+-- Table structure for sys_role
+-- ----------------------------
 DROP TABLE IF EXISTS `sys_role`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sys_role` (
   `id` varchar(32) NOT NULL,
   `create_date` datetime(6) DEFAULT NULL,
@@ -220,24 +190,16 @@ CREATE TABLE `sys_role` (
   `status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `sys_role`
---
+-- ----------------------------
+-- Records of sys_role
+-- ----------------------------
+INSERT INTO `sys_role` VALUES ('402881847917cea40179182e20150008', '2021-04-28 19:12:26.640000', 'admin', null, '', '1', '2021-04-28 19:12:26.640000', null, 'test', 'test', '0');
 
-LOCK TABLES `sys_role` WRITE;
-/*!40000 ALTER TABLE `sys_role` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sys_role` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `sys_user`
---
-
+-- ----------------------------
+-- Table structure for sys_user
+-- ----------------------------
 DROP TABLE IF EXISTS `sys_user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sys_user` (
   `id` varchar(32) NOT NULL,
   `create_date` datetime(6) DEFAULT NULL,
@@ -264,25 +226,17 @@ CREATE TABLE `sys_user` (
   KEY `FKl7i4833vinxhaeho5oynrsjtk` (`group_id`),
   CONSTRAINT `FKl7i4833vinxhaeho5oynrsjtk` FOREIGN KEY (`group_id`) REFERENCES `sys_group` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `sys_user`
---
+-- ----------------------------
+-- Records of sys_user
+-- ----------------------------
+INSERT INTO `sys_user` VALUES ('1', '2021-04-11 17:21:18.392000', 'admin', null, 'test', '1', '2021-04-12 19:23:04.745000', 'admin', 'onemysoft@163.com', null, '13912345678', '管理员', '$2a$10$YnQh6XDwpXzd4kilw8aIleR61GY6kCVDcF04ac5EPs3LRBkJGYyZK', null, '1', null, '0', null, 'admin', null);
+INSERT INTO `sys_user` VALUES ('402881847917cea4017917d3ee000000', '2021-04-28 17:33:55.562000', 'admin', null, '123', '2', '2021-04-28 17:33:55.562000', null, '', null, '', 'test', '$2a$10$B5Tkotkqysx3n8gQRLs.TOdCeTFBS3YvB9A40xDMbjmB..nvoMOpG', null, '1', null, '0', null, 'guest', '4');
 
-LOCK TABLES `sys_user` WRITE;
-/*!40000 ALTER TABLE `sys_user` DISABLE KEYS */;
-INSERT INTO `sys_user` VALUES ('1','2021-04-11 17:21:18.392000','admin',NULL,'test',1,'2021-04-12 19:23:04.745000','admin','onemysoft@163.com',NULL,'13912345678','管理员','$2a$10$YnQh6XDwpXzd4kilw8aIleR61GY6kCVDcF04ac5EPs3LRBkJGYyZK',NULL,'1',NULL,'0',NULL,'admin',NULL),('402881847917cea4017917d3ee000000','2021-04-28 17:33:55.562000','admin',NULL,'',2,'2021-04-28 17:33:55.562000',NULL,'',NULL,'','test','$2a$10$B5Tkotkqysx3n8gQRLs.TOdCeTFBS3YvB9A40xDMbjmB..nvoMOpG',NULL,'1',NULL,'0',NULL,'guest','2');
-/*!40000 ALTER TABLE `sys_user` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `sys_user_roles`
---
-
+-- ----------------------------
+-- Table structure for sys_user_roles
+-- ----------------------------
 DROP TABLE IF EXISTS `sys_user_roles`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sys_user_roles` (
   `users_id` varchar(32) NOT NULL,
   `roles_id` varchar(32) NOT NULL,
@@ -291,24 +245,7 @@ CREATE TABLE `sys_user_roles` (
   CONSTRAINT `FKdpvc6d7xqpqr43dfuk1s27cqh` FOREIGN KEY (`roles_id`) REFERENCES `sys_role` (`id`),
   CONSTRAINT `FKl5a53kgwyql3twmb6wkyf1x7c` FOREIGN KEY (`users_id`) REFERENCES `sys_user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `sys_user_roles`
---
-
-LOCK TABLES `sys_user_roles` WRITE;
-/*!40000 ALTER TABLE `sys_user_roles` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sys_user_roles` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2021-04-28 17:37:55
+-- ----------------------------
+-- Records of sys_user_roles
+-- ----------------------------
