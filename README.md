@@ -17,7 +17,7 @@ OM-Admin后台管理系统
 
 ## 在线体验
 
-##运行项目
+## 运行项目
 
 - 通过Java应用方式运行com.onemysoft.PortalApplication.java文件
 - 数据库配置：数据库名称oma 用户root 密码123456
