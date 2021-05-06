@@ -134,8 +134,11 @@ var initEntityForm = function(){
 //						groupIds.push(groups[key].id);
 //						groupNames.push(groups[key].groupName);
 //					}
-					$("#groupId").val(group.id);
-					$("#groupName").val(group.groupName);
+					if(group!=null){
+						$("#groupId").val(group.id);
+						$("#groupName").val(group.groupName);
+					}
+
 					
 					//填充角色
 					var roles=result.data.roles;

@@ -4,7 +4,7 @@ OM-Admin后台管理系统
 
 ## 技术框架
 1. 前端：jquery+bootstrap+adminlte3(vue 后续)
-2. 后端:springboot+spring security+jwt+jpa+mybatis
+2. 后端：springboot+spring security+jwt+jpa+mybatis
 
 ## 内置功能
 
@@ -32,7 +32,11 @@ OM-Admin后台管理系统
     <tr>
         <td><img src="https://gitee.com/onemy/om-admin/raw/master/doc/pic/menu.png"/></td>
         <td><img src="https://gitee.com/onemy/om-admin/raw/master/doc/pic/group.png"/></td>
-    </tr>    
+    </tr>
+    <tr>
+        <td><img src="https://gitee.com/onemy/om-admin/raw/master/doc/pic/profile.png"/></td>
+        <td></td>
+    </tr>       
 </table>
 
 
