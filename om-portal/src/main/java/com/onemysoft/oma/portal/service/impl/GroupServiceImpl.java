@@ -131,12 +131,7 @@ public class GroupServiceImpl implements GroupService {
 	@Override
 	@Transactional
 	public void updateStatus(Group group) {
-        Optional < Group > groupDb = this.groupRepository.findById(group.getId());
-        if (groupDb.isPresent()) {
-            this.groupRepository.upateStatus(group.getId(), group.getStatus());
-        } else {
-            throw new ResourceNotFoundException("记录没找到 id : " + group.getId());
-        }
+		this.groupRepository.upateStatus(group.getId(), group.getStatus());
 	}
 
 	@Override

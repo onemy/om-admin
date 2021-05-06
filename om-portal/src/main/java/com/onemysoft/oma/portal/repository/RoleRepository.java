@@ -37,6 +37,6 @@ public interface RoleRepository extends JpaRepository<Role, String> {
     
 
     @Modifying
-    @Query("update Role r set r.status=?2  where id=?1")
+    @Query("update Role set status=?2  where id=?1")
     void upateStatus(String id,String status);
 }

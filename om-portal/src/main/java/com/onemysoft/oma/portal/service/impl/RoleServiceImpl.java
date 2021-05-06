@@ -136,13 +136,9 @@ public class RoleServiceImpl implements RoleService {
 
 
 	@Override
+	@Transactional
 	public void updateStatus(Role role) {
-        Optional < Role > roleDb = this.roleRepository.findById(role.getId());
-        if (roleDb.isPresent()) {
-            this.roleRepository.upateStatus(role.getId(), role.getStatus());
-        } else {
-            throw new ResourceNotFoundException("记录没找到 id : " + role.getId());
-        }
+        this.roleRepository.upateStatus(role.getId(), role.getStatus());
 	}
 
 

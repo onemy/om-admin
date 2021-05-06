@@ -159,24 +159,16 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@Transactional
 	public void updatePwd(User user) {
-        Optional < User > userDb = this.userRepository.findById(user.getId());
-        if (userDb.isPresent()) {
-        	user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-            this.userRepository.upatePwd(user.getId(), user.getPassword());
-        } else {
-            throw new ResourceNotFoundException("记录没找到 id : " + user.getId());
-        }
+       user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+       this.userRepository.upatePwd(user.getId(), user.getPassword());
 	}
 
 	@Override
+	@Transactional
 	public void updateStatus(User user) {
-        Optional < User > userDb = this.userRepository.findById(user.getId());
-        if (userDb.isPresent()) {
-            this.userRepository.upateStatus(user.getId(), user.getStatus());
-        } else {
-            throw new ResourceNotFoundException("记录没找到 id : " + user.getId());
-        }
+        this.userRepository.upateStatus(user.getId(), user.getStatus());
 	}
 
 
