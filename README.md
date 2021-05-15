@@ -24,7 +24,6 @@ OM-Admin后台管理系统
    - Jdk8+
    - Mysql5.5+
    - Maven
-   - Lombok<font color="red">（重要）</font>
 
 - ##### 导入项目
 
