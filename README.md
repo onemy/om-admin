@@ -61,5 +61,8 @@ OM-Admin后台管理系统
 
 
 ## 交流群
+公众号：
+<img src="https://gitee.com/onemy/om-admin/raw/master/doc/pic/wechat_qrcode.jpg"/>
 
 QQ:1080825387
+
