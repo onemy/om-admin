@@ -60,9 +60,13 @@ OM-Admin后台管理系统
 </table>
 
 
-## 交流群
-公众号：
+## 交流
+
+##### 公众号：
+
 <img src="https://gitee.com/onemy/om-admin/raw/master/doc/pic/wechat_qrcode.jpg"/>
 
-QQ:1080825387
+##### QQ群：
+
+群号:1080825387
 
