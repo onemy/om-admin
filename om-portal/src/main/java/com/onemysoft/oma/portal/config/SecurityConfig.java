@@ -92,6 +92,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
     	//放行静态资源
         web.ignoring().antMatchers(
+        						"/",
         						"/dist/**",
         						"/plugins/**",
         						"/pages/**",
